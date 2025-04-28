@@ -117,3 +117,39 @@ main() {
 # Execute main function
 main
 ```
+# AWS IAM Management Script Overview
+
+This script provides automated management of AWS IAM resources with the following features:
+
+## Script Functionality
+
+- **Defines an array of IAM users** to be created
+- **Provides functions** to:
+  - Create IAM users
+  - Create an admin group
+  - Attach the `AdministratorAccess` policy to the group
+  - Add all users to the admin group
+- **Includes error checking** for each AWS CLI operation
+- **Implements a main function** that orchestrates the execution flow
+
+## Prerequisites
+
+The script assumes you have:
+
+- **AWS CLI** installed and configured with proper credentials
+- **Sufficient IAM permissions** to perform these operations:
+  - `iam:CreateUser`
+  - `iam:CreateGroup`
+  - `iam:AttachGroupPolicy`
+  - `iam:AddUserToGroup`
+
+## Implementation Notes
+
+1. The script uses AWS CLI commands for all IAM operations
+2. Each operation includes success/failure feedback
+3. The execution follows a logical sequence:
+   - First create users
+   - Then create and configure the group
+   - Finally assign users to the group
+
+
